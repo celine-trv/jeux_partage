@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BackOffice JEUX PARTAGE{% endblock %}
+
+{% block body %}
+    <h1 class="h1 mt-3 mb-4">BackOffice 
+        {% if app.user %}
+            de <span>{{app.user.username}}</span>
+        {% endif %}
+    </h1>
+
+    <div class="row align-item-center backoffice">
+		<div class="card-deck mx-auto">
+			<div class="size-card col-md-6 col-xxl-3 py-3 px-2">
+				<div class="card mb-4 h-100 shadow-sm">
+					<div class="card-body">
+						<h4 class="text-center">Gestion des Membres</h4>
+						<p class="card-text my-1">
+                            Dans cet espace vous pourrez :
+                            <ul class="mt-2">
+                                <li>Modifier le rôle des utilisateurs</li>
+                                <li>Supprimer un utilisateur</li>
+                            </ul>
+                        </p>
+                    </div>
+					<div class="card-footer d-flex justify-content-around align-items-center">
+                        <a href="{{ path("admin_users") }}" class="btn-jp btn-card" id="btn_users">Gestion des Membres</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="size-card col-md-6 col-xxl-3 py-3 px-2">
+				<div class="card mb-4 h-100 shadow-sm">
+					<div class="card-body">
+						<h4 class="text-center">Gestion des Jeux</h4>
+						<p class="card-text my-1">
+                            Dans cet espace vous pourrez :
+                            <ul class="mt-2">
+                                <li>Modifier les jeux à l'emprunt</li>
+                                <li>Supprimer un jeu</li>
+                            </ul>
+                        </p>
+                    </div>
+					<div class="card-footer d-flex justify-content-around align-items-center">
+                        <a href="{{ path("admin_games") }}" class="btn-jp btn-card" id="btn_users">Gestion des Jeux</a>
+					</div>
+				</div>
+			</div>
+            
+			<div class="size-card col-md-6 col-xxl-3 py-3 px-2">
+				<div class="card mb-4 h-100 shadow-sm">
+					<div class="card-body">
+						<h4 class="text-center">Gestion des Catégories</h4>
+						<p class="card-text my-1">
+                            Dans cet espace vous pourrez :
+                            <ul class="mt-2">
+                                <li>Modifier les catégories des jeux</li>
+                                <li>Ajouter une nouvelle catégorie</li>
+                                <li>Supprimer une catégorie</li>
+                            </ul>
+                        </p>
+                    </div>
+					<div class="card-footer d-flex justify-content-around align-items-center">
+                        <a href="{{ path("admin_categories") }}" class="btn-jp btn-card" id="btn_users">Gestion des Catégories</a>
+					</div>
+				</div>
+			</div>
+            
+			<div class="size-card col-md-6 col-xxl-3 py-3 px-2">
+				<div class="card mb-4 h-100 shadow-sm">
+					<div class="card-body">
+						<h4 class="text-center">Gestion des Emprunts</h4>
+						<p class="card-text my-1">
+                            Dans cet espace vous pourrez :
+                            <ul class="mt-2">
+                                <li>Voir l'historique des emprunts</li>
+                            </ul>
+                        </p>
+                    </div>
+					<div class="card-footer d-flex justify-content-around align-items-center">
+                        <a href="{{ path("admin_borrowings") }}" class="btn-jp btn-card" id="btn_users">Gestion des Emprunts</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
